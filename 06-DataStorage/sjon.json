@@ -1,0 +1,34 @@
+{
+  "name": "Imię",
+  "surname": "Nazwisko",
+  "age": 26,
+  "gender": "men",
+  "email": "email@email.pl",
+  "phone": {
+    "landline": "123 45 67",
+    "mobile": "123 456 789"
+  },
+  "address": {
+    "street": "ulica",
+    "home number": "12",
+    "postal code": "12-345",
+    "city": "Miasto"
+  },
+  "interests": [
+    "games",
+    "programming",
+    "football"
+  ],
+  "family": {
+    "spouse": {
+      "name": "imie",
+      "surname": "nazwisko"
+    },
+    "childrens": [
+      {
+        "name": "imie",
+        "surname": "nazwisko"
+      }
+    ]
+  }
+}
