@@ -16,6 +16,28 @@
 			
 			// show results (popup window)
 			
+			function getRandomInt(min, max) {
+					min = Math.ceil(min);
+					max = Math.floor(max);
+					return Math.floor(Math.random() * (max - min)) + min;
+			}
+		
+			let guessNumber = getRandomInt(1, 5);
+			
+			let guessingNumber = parseInt(prompt("Guess number between 1-5:"));
+			console.log(guessingNumber);
+			while (true) {
+				if (guessingNumber > guessNumber) {
+					guessingNumber = parseInt(prompt(guessingNumber + " is to big, try again:"));
+				} else if (guessingNumber < guessNumber) {
+					guessingNumber = parseInt(prompt(guessingNumber + " is to small, try again:"));
+				} else  if (guessingNumber === guessNumber) {
+					alert(guessingNumber + " is correct, you won!");
+					break;
+				} else {
+					guessingNumber = parseInt(prompt("That's not a number!"));
+				}
+			}
 		</script>
 	</body>
 </html>
