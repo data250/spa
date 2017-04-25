@@ -6,7 +6,25 @@
 	</head>
 	<body>
 		<h1>Create mobile phone</h1>
+		<button id="button" type="button" onclick="display()">Display</button>
 		<script>
+			let phone = {
+				brand: "Samsung",
+				model: "Galaxy S5",
+				weight: 130,
+				lte: true,
+				storage: [8, 16, 32],
+				battery: {
+					capacity: "2400 mA",
+					call_time: "8h",
+					standby_time: "22h",
+					power_save_time: "122h"
+				}
+			}
+
+			function display() {
+				alert(JSON.stringify(phone));
+			}
 		</script>
 	</body>
 </html>
