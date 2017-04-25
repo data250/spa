@@ -3,10 +3,62 @@
 	<head>
 		<title>Houses for sale</title>
 		<meta charset="UTF-8">
-	</head>
-	<body>
-		<h1>Houses for sale</h1>
-		<script>
-		</script>
-	</body>
-</html>
+		</head>
+		<body>
+			<h1>Houses for sale</h1>
+			<script>
+				function house(bedrooms, facilities, price, address, phone) {
+					this.bedrooms = bedrooms;
+					this.facilities = facilities;
+					this.price=price;
+					this.address=address;
+					this.phone = phone;
+				}
+
+				house.prototype.changePrice = function(newPrice) {
+					this.price = newPrice;
+				};
+
+				house.prototype.addFacility = function(newFacility) {
+					if (newFacility !== null || newFacility !== undefined) {
+						this.facilities.push(newFacility);
+					}
+				};
+
+				house.prototype.description = function() {
+					let str = "";
+					let getType = {}; // NOTE(hubert): This is for type checking, in this case for function checking.
+					let functionType = "[object Function]";
+					for (let key in this) {
+						if (getType.toString.call(this[key]) === functionType) continue;
+							str += key + " = " + this[key] + "\n";
+					}
+					return str;
+				};
+
+				let houses = [
+					new house(2, ["garden", "garage", "swimming pool"], 540000, "Grochowska 31, 31-516 Kraków", "600 700 800"),
+					new house(3, ["garage"], 12400000, "uknow street", "123 456 789"),
+					new house(1, ["garage", "garden"], 543200, " Bielańsko-Tyniecki Park Krajobrazowy, 28 Lipca 1943 Roku 17a, 30-233 Kraków", "123 321 123"),
+					new house(4, ["garden"], 4560000, "Niepokalanej Panny Marii 76a, 31-589 Kraków", "12 345 67 89"),
+					new house(6, ["swimming pool"], 1000000, "Rynek Główny 11, 31-009 Kraków", "987 654 321"),
+				];
+
+				houses.forEach(function(house) {
+					console.log(house.description());
+				});
+
+				
+				houses[1].changePrice(5000000);
+				houses[1].addFacility("garage");
+				houses[2].addFacility("garden");
+				houses[4].changePrice(2000000);
+				houses[4].addFacility("swimming pool");
+
+				houses.forEach(function(house) {
+					console.log(house.description());
+				});
+			</script>
+		</body>
+	</html>
+	
