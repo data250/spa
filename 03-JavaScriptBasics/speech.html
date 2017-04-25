@@ -10,6 +10,9 @@
 		<p id="speech"></p>
 
 		<script>
+			document.getElementsByTagName('button')[0].click();
+		
+		
 			function createSpeech() {
 				//each array consists of 10 elements
 				var first = [	'Koleżanki i koledzy,', 'Z drugiej strony', 'Podobnie', 'Nie zapominajmy jednak, że',
@@ -38,13 +41,19 @@
 							];
 				
 				// complete a JavaScript code here ...
-				// ...
+				document.getElementById("speech").innerText = first[n()] +" "+ second[n()] +" "+ third[n()] +" "+ fourth[n()];
 				
 			}
 
+			function nextInt(min, max) {
+ 				min = Math.ceil(min);
+  				max = Math.floor(max);
+  				return Math.floor(Math.random() * (max - min)) + min;
+			}
+			
 			// returns random integer from 0 to 9
 			function n() {
-				// ...
+				return nextInt(0, 9);
 			}
 			
 		</script>
